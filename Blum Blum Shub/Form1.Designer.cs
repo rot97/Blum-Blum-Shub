@@ -40,6 +40,16 @@ namespace Blum_Blum_Shub {
             this.ListQ = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ButtonHelp = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TextResultBin = new System.Windows.Forms.TextBox();
+            this.TextGamma1 = new System.Windows.Forms.TextBox();
+            this.TextGamma2 = new System.Windows.Forms.TextBox();
+            this.TextGamma3 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textQ
@@ -1173,11 +1183,113 @@ namespace Blum_Blum_Shub {
             this.ButtonHelp.Text = "Помощь";
             this.ButtonHelp.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(273, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Десятичная";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(415, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Двоичная";
+            // 
+            // TextResultBin
+            // 
+            this.TextResultBin.Location = new System.Drawing.Point(382, 19);
+            this.TextResultBin.Multiline = true;
+            this.TextResultBin.Name = "TextResultBin";
+            this.TextResultBin.ReadOnly = true;
+            this.TextResultBin.Size = new System.Drawing.Size(136, 208);
+            this.TextResultBin.TabIndex = 17;
+            this.TextResultBin.WordWrap = false;
+            // 
+            // TextGamma1
+            // 
+            this.TextGamma1.Location = new System.Drawing.Point(120, 259);
+            this.TextGamma1.Name = "TextGamma1";
+            this.TextGamma1.ReadOnly = true;
+            this.TextGamma1.Size = new System.Drawing.Size(398, 20);
+            this.TextGamma1.TabIndex = 19;
+            this.TextGamma1.WordWrap = false;
+            // 
+            // TextGamma2
+            // 
+            this.TextGamma2.Location = new System.Drawing.Point(120, 281);
+            this.TextGamma2.Name = "TextGamma2";
+            this.TextGamma2.ReadOnly = true;
+            this.TextGamma2.Size = new System.Drawing.Size(398, 20);
+            this.TextGamma2.TabIndex = 20;
+            this.TextGamma2.WordWrap = false;
+            // 
+            // TextGamma3
+            // 
+            this.TextGamma3.Location = new System.Drawing.Point(120, 307);
+            this.TextGamma3.Name = "TextGamma3";
+            this.TextGamma3.ReadOnly = true;
+            this.TextGamma3.Size = new System.Drawing.Size(398, 20);
+            this.TextGamma3.TabIndex = 21;
+            this.TextGamma3.WordWrap = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 262);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Бит чётности";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 284);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Младший бит";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 310);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(102, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Два младших бита";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(12, 230);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 19);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Гаммы";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 234);
+            this.ClientSize = new System.Drawing.Size(525, 338);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.TextGamma3);
+            this.Controls.Add(this.TextGamma2);
+            this.Controls.Add(this.TextGamma1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.TextResultBin);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.ButtonHelp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ListQ);
@@ -1219,6 +1331,16 @@ namespace Blum_Blum_Shub {
         private System.Windows.Forms.ComboBox ListQ;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ButtonHelp;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TextResultBin;
+        private System.Windows.Forms.TextBox TextGamma1;
+        private System.Windows.Forms.TextBox TextGamma2;
+        private System.Windows.Forms.TextBox TextGamma3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 

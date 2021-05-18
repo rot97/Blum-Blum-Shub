@@ -16,7 +16,7 @@ namespace Blum_Blum_Shub {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             TextResult.ScrollBars = ScrollBars.Vertical;
-            //textBox4.Text = "Hello" + Environment.NewLine + "Hello" + Environment.NewLine + "Hello" + Environment.NewLine + "Hello" + Environment.NewLine + "Hello" + Environment.NewLine + "Hello" + Environment.NewLine + "Hello" + Environment.NewLine + "Hello" + Environment.NewLine + "Hello";
+            TextResultBin.ScrollBars = ScrollBars.Both;
             RunButton.Click += new EventHandler(RunButton_Click);
             ButtonHelp.Click += new EventHandler(ButtonHelp_Click);
             ListQ.SelectedIndex = 0;
@@ -28,6 +28,10 @@ namespace Blum_Blum_Shub {
             ulong p, q, x0, n;
             LabelError.Text = "";
             TextResult.Text = "";
+            TextResultBin.Text = "";
+            TextGamma1.Text = "";
+            TextGamma2.Text = "";
+            TextGamma3.Text = "";
 
             if (ListP.SelectedIndex == 0) {
                 //Входные данные числа?
@@ -102,9 +106,17 @@ namespace Blum_Blum_Shub {
             }
 
             TextResult.Text += x0.ToString() + Environment.NewLine;
+            TextResultBin.Text += Convert.ToString((long)x0, 2) + Environment.NewLine;
+            TextGamma1.Text += ParityByte(x0);
+            TextGamma2.Text += (x0 % 2).ToString();
+            TextGamma3.Text += YoungTwoBits(x0);
             for (uint i = 1; i < n; i++) {
                 x0 = NextValue(x0, p * q);
                 TextResult.Text += x0.ToString() + Environment.NewLine;
+                TextResultBin.Text += Convert.ToString((long)x0, 2) + Environment.NewLine;
+                TextGamma1.Text += ParityByte(x0);
+                TextGamma2.Text += (x0 % 2).ToString();
+                TextGamma3.Text += YoungTwoBits(x0);
             }
         }
 
@@ -112,14 +124,45 @@ namespace Blum_Blum_Shub {
             TextResult.Text = helptext;
         }
 
-        public bool IsPrime(ulong x) {
+        private string ParityByte(ulong x0) {
+            int t = 0;
+            for (int i = 0; i < 64; i++)
+                if ((((ulong)1 << i) & x0) > 0)
+                    t++;
+            if (t % 2 > 0)
+                return "1";
+            else
+                return "0";
+        }
+
+
+        private string YoungTwoBits(ulong x0) {
+            ulong t = x0 % 4;
+            switch (t) {
+                case 0:
+                    return "00";
+                    break;
+                case 1:
+                    return "01";
+                    break;
+                case 2:
+                    return "10";
+                    break;
+                case 3:
+                    return "11";
+                    break;
+            }
+            return "";
+        }
+
+        private bool IsPrime(ulong x) {
             for (ulong i = 2; i <= Math.Sqrt(x); i++)
                 if (x % i == 0)
                     return false;
             return true;
         }
 
-        public ulong NextValue(ulong x0, ulong m) {
+        private ulong NextValue(ulong x0, ulong m) {
             return (x0 * x0) % m;
         }
     }
